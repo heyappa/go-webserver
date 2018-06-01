@@ -9,14 +9,20 @@ func main() {
 	r := &router{make(map[string]map[string]http.HandlerFunc)}
 
 	r.HandleFunc("GET", "/", func(w http.ResponseWriter, r *http.Request) {
-        fmt.Fprintln(w, "welcome!")
-        fmt.Fprintln(w, "GET (about, users/:id, users/:user_id/addr/:addr_id)")
-        fmt.Fprintln(w, "POST (users, users/:user_id/addr)")
+		fmt.Fprintln(w, "welcome!")
+		fmt.Fprintln(w, "GET (about, users/:id, users/:user_id/addr/:addr_id)")
+		fmt.Fprintln(w, "POST (users, users/:user_id/addr)")
 	})
 
 	r.HandleFunc("GET", "/about", func(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintln(w, "about")
 	})
+
+	/*
+		r.HandleFunc("GET", "/users", func(w http.ResponseWriter, r *http.Request) {
+			fmt.Fprintln(w, "<h1>AAAAAAAAAAAAAAA</h1>")
+		})
+	*/
 
 	r.HandleFunc("GET", "/users/:id", func(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintln(w, "retrieve user")
