@@ -2,3 +2,7 @@ https://thebook.io/006806/ch08/
 
 8.3 인가 8.4 할 차례 (2018/06/01)
 
+
+// to run
+go run *.go
+
