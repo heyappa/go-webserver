@@ -53,7 +53,7 @@ func match(pattern, path string) (bool, map[string]string) {
 		case patterns[i] == paths[i]:
 		// 패턴과 패스의 부분 문자열이 일치하면 바로 다음 루프 수행
 		case len(patterns[i]) > 0 && patterns[i][0] == ':':
-			// 패턴이 ‘:’ 문자로 시작하면 params에 URL params를 담은 후 다음 루프 수행
+			// 패턴이 ':' 문자로 시작하면 params에 URL params를 담은 후 다음 루프 수행
 			params[patterns[i][1:]] = paths[i]
 		default:
 			// 일치하는 경우가 없으면 false를 반환
